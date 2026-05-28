@@ -91,7 +91,9 @@ async function performSearch() {
     loadingSpinner.classList.remove('hidden');
 
     try {
-        const response = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(query)}&media=music&limit=1`);
+        // Hide the API URL using base64 encoding so it's not exposed in plaintext on GitHub
+        const apiUrl = atob('aHR0cHM6Ly9pdHVuZXMuYXBwbGUuY29tL3NlYXJjaD90ZXJtPQ=='); // Decodes to https://itunes.apple.com/search?term=
+        const response = await fetch(`${apiUrl}${encodeURIComponent(query)}&media=music&limit=1`);
         const result = await response.json();
 
         if (result.resultCount > 0) {
