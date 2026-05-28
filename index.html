@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fab fa-spotify"></i>
+                <span>Spotify</span>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><i class="fas fa-home"></i> Home</li>
+                    <li><i class="fas fa-search"></i> Search</li>
+                    <li><i class="fas fa-book"></i> Your Library</li>
+                </ul>
+            </nav>
+            <div class="sidebar-actions">
+                <p><i class="fas fa-plus-square"></i> Create Playlist</p>
+                <p><i class="fas fa-heart"></i> Liked Songs</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="What do you want to listen to?">
+                    <button id="search-button">Search</button>
+                </div>
+            </header>
+
+            <section class="display-area" id="display-area">
+                <div id="loading-spinner" class="hidden">Loading...</div>
+                <div id="song-info-large" class="song-info-large hidden">
+                    <img id="large-thumbnail" src="" alt="Song Thumbnail">
+                    <h1 id="large-title">Song Title</h1>
+                    <p id="large-artist">Artist Name</p>
+                </div>
+                <div id="welcome-message">
+                    <h1>Welcome to Spotify</h1>
+                    <p>Search for a song to start listening.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Playbar -->
+        <footer class="playbar">
+            <div class="now-playing">
+                <img id="small-thumbnail" src="https://via.placeholder.com/56" alt="Small Thumbnail">
+                <div class="song-details">
+                    <div id="small-title" class="title">No Song Selected</div>
+                    <div id="small-artist" class="artist">-</div>
+                </div>
+                <i class="far fa-heart"></i>
+            </div>
+
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <i class="fas fa-random"></i>
+                    <i class="fas fa-step-backward" id="prev-btn"></i>
+                    <i class="fas fa-play-circle" id="play-pause-btn"></i>
+                    <i class="fas fa-step-forward" id="next-btn"></i>
+                    <i class="fas fa-redo"></i>
+                </div>
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <div class="progress-bar" id="progress-bar-container">
+                        <div class="progress" id="progress-bar"></div>
+                    </div>
+                    <span id="total-duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-controls">
+                <i class="fas fa-list"></i>
+                <i class="fas fa-desktop"></i>
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
